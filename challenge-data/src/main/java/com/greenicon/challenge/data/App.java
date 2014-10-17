@@ -2,9 +2,7 @@ package com.greenicon.challenge.data;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.context.support.GenericXmlApplicationContext;
 
-import com.greenicon.challenge.data.repositories.services.CategoryService;
 import com.greenicon.challenge.data.repositories.services.provider.RepositoryServiceProvider;
 
 /**
@@ -30,9 +28,10 @@ public class App
 		for(String s:x){
 			System.out.println(s);
 		}*/
-		
+		/*
+		@SuppressWarnings("unused")
 		CategoryService a1 = ctx.getBean(CategoryService.class);
-		rsp = ctx.getBean(RepositoryServiceProvider.class);
+		*/rsp = ctx.getBean(RepositoryServiceProvider.class);
 
 		System.out.println(rsp.getCategoryService().findAll());
 	}

@@ -1,4 +1,4 @@
-package com.greenicon.challenge.rest;
+package com.greenicon.challenge.services;
 
 /**
  * Hello world!

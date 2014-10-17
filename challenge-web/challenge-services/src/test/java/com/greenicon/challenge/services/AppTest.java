@@ -1,4 +1,4 @@
-package com.greenicon.challenge.rest;
+package com.greenicon.challenge.services;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

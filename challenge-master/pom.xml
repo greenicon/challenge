@@ -16,7 +16,7 @@
 	<modules>
 		<module>../challenge-data</module>
 		<module>../challenge-services</module>
-		<module>../challenge-rest</module>
+		<module>../challenge-webservices</module>
 		<module>../challenge-web</module>
 	</modules>
 

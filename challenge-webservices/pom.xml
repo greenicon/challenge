@@ -8,10 +8,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../challenge-master</relativePath>
 	</parent>
-	<artifactId>challenge-rest</artifactId>
-	<packaging>jar</packaging>
+	<artifactId>challenge-webservices</artifactId>
+	<packaging>war</packaging>
 
-	<name>challenge-rest</name>
+	<name>challenge-webservices</name>
 	<description>
 			rest services
 		</description>
@@ -43,4 +43,8 @@
 		</dependency>
 	</dependencies>
 
+
+	<build>
+		<finalName>challenge-web</finalName>
+	</build>
 </project>

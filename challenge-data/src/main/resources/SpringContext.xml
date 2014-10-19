@@ -18,7 +18,7 @@
 	<context:annotation-config />
 
 	<context:property-placeholder
-		location="file:${catalina.home}/conf/onmobile/mainmenu-backend/config.properties" />
+		location="file:${catalina.home}/conf/challenge/data/db.properties" />
 
 	<bean id="djDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
 		destroy-method="close">

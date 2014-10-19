@@ -6,6 +6,11 @@ import com.greenicon.challenge.data.models.Challenge;
 import com.greenicon.challenge.services.exceptions.DataNotFoundException;
 import com.greenicon.challenge.services.exceptions.InvalidInputException;
 
+/**
+ * 
+ *	Implement this interface for providing services related to challenge
+ *
+ */
 public interface ChallengeService {
 
 	/**
@@ -17,6 +22,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException 
 	 */
 	Challenge getChallengeById(String challengeId) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges for the particular category
@@ -26,6 +32,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getChallengesByCategory(String category) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges for the particular tag
@@ -35,6 +42,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getChallengesByTag(String tag) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges for all the tags present in the collection 'tags'
@@ -44,6 +52,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getChallengesByTags(Collection<String> tags) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of challenges by the locationId
@@ -53,6 +62,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getChallengesByLocation(String locationId) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges which are trending currently
@@ -62,6 +72,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getTrendingChallenges() throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges which are accepted by the user and not yet accomplished
@@ -71,6 +82,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getAcceptedChallengesForUser(String userId) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges which are accepted and accomplished by the user
@@ -80,6 +92,17 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getAccomplishedChallengesForUser(String userId) throws DataNotFoundException;
+	
+	/**
+	 * 
+	 * Returns a collection of Challenges which are created after the given time
+	 * 
+	 * @param timestamp
+	 * @return
+	 * @throws DataNotFoundException
+	 */
+	Collection<Challenge> getChallengesCreatedAfter(long timestamp) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges which are in the whish-list for the user
@@ -89,6 +112,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getChallengeWishlistForUser(String userId) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges which are accepted by the gang
@@ -98,6 +122,7 @@ public interface ChallengeService {
 	 * @throws DataNotFoundException
 	 */
 	Collection<Challenge> getChallengesForGang(String gangId) throws DataNotFoundException;
+	
 	/**
 	 * 
 	 * Returns a collection of Challenges which are related to the given challenge

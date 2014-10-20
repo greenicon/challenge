@@ -3,8 +3,8 @@ package com.greenicon.challenge.services.challenge;
 import java.util.Collection;
 
 import com.greenicon.challenge.data.models.Challenge;
-import com.greenicon.challenge.services.exceptions.DataNotFoundException;
-import com.greenicon.challenge.services.exceptions.InvalidInputException;
+import com.greenicon.challenge.services.common.exceptions.DataNotFoundException;
+import com.greenicon.challenge.services.common.exceptions.InvalidInputException;
 
 /**
  * 

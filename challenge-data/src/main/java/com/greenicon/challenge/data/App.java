@@ -1,9 +1,12 @@
 package com.greenicon.challenge.data;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import java.util.List;
 
+import org.springframework.context.ApplicationContext;
+
+import com.greenicon.challenge.data.models.User;
 import com.greenicon.challenge.data.repositories.services.provider.RepositoryServiceProvider;
+import com.greenicon.challenge.data.util.TestUtils;
 
 /**
  * Hello world!
@@ -21,18 +24,15 @@ public class App
 	public static void main( String[] args )
 	{
 
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:SpringContext.xml");//GenericXmlApplicationContext();
-		//ctx.load("classpath:SpringContext.xml");
+		ApplicationContext ctx = TestUtils.getApplicationContext();//GenericXmlApplicationContext();
+		rsp = ctx.getBean(RepositoryServiceProvider.class);
 
-		/*String[] x = ctx.getBeanDefinitionNames();
-		for(String s:x){
-			System.out.println(s);
-		}*/
-		/*
-		@SuppressWarnings("unused")
-		CategoryService a1 = ctx.getBean(CategoryService.class);
-		*/rsp = ctx.getBean(RepositoryServiceProvider.class);
-
+		List<User> users = rsp.getUserService().findAll(); 
+		
+		for(User user:users){
+			System.out.println(user);
+		}
+		System.out.println(users);
 		System.out.println(rsp.getCategoryService().findAll());
 	}
 }

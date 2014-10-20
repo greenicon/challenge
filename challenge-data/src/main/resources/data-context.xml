@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+<!-- 	<mvc:annotation-driven /> -->
+	<context:annotation-config />
+
+	<context:property-placeholder
+		 location="file:${catalina.home}/conf/challenge/data/db.properties" /> 
+
+	<bean id="djDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${db.driver.class.name}"></property>
+		<property name="jdbcUrl" value="${db.url}"></property>
+		<property name="user" value="${db.username}"></property>
+		<property name="password" value="${db.password}"></property>
+		<property name="maxPoolSize" value="${db.poolsize.max}"></property>
+		<property name="minPoolSize" value="${db.poolsize.min}"></property>
+		<property name="initialPoolSize" value="${db.poolsize.initial}"></property>
+		<property name="maxIdleTime" value="${db.time.idle.max}"></property>
+	</bean>
+	
+	<!-- <bean id="rsp" class="com.greenicon.challenge.data.repositories.services.provider.RepositoryServiceProvider">
+	</bean> -->
+
+<jpa:repositories base-package="com.greenicon.challenge.data.repositories" />
+
+	<bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"
+		scope="singleton" />
+
+	<bean id="jpaVendorAdapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+		p:showSql="${db.hibernate.sql.show}" p:databasePlatform="org.hibernate.dialect.MySQLDialect"
+		scope="singleton" />
+
+	<bean id="jpaEntityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		p:dataSource-ref="djDataSource" p:jpaDialect-ref="jpaDialect"
+		p:jpaVendorAdapter-ref="jpaVendorAdapter" p:packagesToScan="com.greenicon.challenge.data.models"
+		scope="singleton" />
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+		p:entityManagerFactory-ref="jpaEntityManagerFactory" scope="singleton" />
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	
+
+	<context:component-scan base-package="com.greenicon.challenge.data" />
+
+</beans>

@@ -1,7 +1,11 @@
 package com.greenicon.challenge.data.models;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -18,17 +22,19 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(unique=true, nullable=false, length=64)
 	private String id;
 
 	@Column(name="COVER_IMAGEID", nullable=false, length=64)
 	private String coverImageid;
 
-	@Column(nullable=false)
+	@Column(name="CREATEDTS")//(nullable=false)
 	private Timestamp createdts;
 
-	@Column(name="CURRENT_LOCATIONID", nullable=false, length=64)
+	@Column(name="CURRENT_LOCATIONID", length=64)
 	private String currentLocationid;
 
 	@Temporal(TemporalType.DATE)
@@ -41,10 +47,10 @@ public class User implements Serializable {
 	@Column(name="FIRST_NAME", nullable=false, length=64)
 	private String firstName;
 
-	@Column(nullable=false, length=1)
+	@Column(length=1)
 	private String gender;
 
-	@Column(name="HOME_LOCATIONID", nullable=false, length=64)
+	@Column(name="HOME_LOCATIONID", length=64)
 	private String homeLocationid;
 
 	@Column(name="LAST_NAME", length=64)
@@ -56,7 +62,7 @@ public class User implements Serializable {
 	@Column(name="PROFILE_IMAGEID", nullable=false, length=64)
 	private String profileImageid;
 
-	@Column(nullable=false)
+	@Column(name="UPDATEDTS")
 	private Timestamp updatedts;
 
 	//bi-directional many-to-one association to FriendsMap
@@ -73,7 +79,7 @@ public class User implements Serializable {
 
 	//bi-directional many-to-one association to UserLogin
 	@ManyToOne
-	@JoinColumn(name="USER_LOGIN_ID", nullable=false)
+	@JoinColumn(name="USER_LOGIN_ID")
 	private UserLogin userLogin;
 
 	//bi-directional many-to-one association to UserData
@@ -283,4 +289,23 @@ public class User implements Serializable {
 		return userData;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", coverImageid=" + coverImageid
+				+ ", createdts=" + createdts + ", currentLocationid="
+				+ currentLocationid + ", dob=" + dob + ", email=" + email
+				+ ", firstName=" + firstName + ", gender=" + gender
+				+ ", homeLocationid=" + homeLocationid + ", lastName="
+				+ lastName + ", mobilenumber=" + mobilenumber
+				+ ", profileImageid=" + profileImageid + ", updatedts="
+				+ updatedts + ", friendsMaps1=" + friendsMaps1
+				+ ", friendsMaps2=" + friendsMaps2 + ", gangUserMaps="
+				+ gangUserMaps + ", userLogin=" + userLogin + ", userData="
+				+ userData + "]";
+	}
+	
+	
 }

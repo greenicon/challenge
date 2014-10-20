@@ -6,6 +6,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestUtils {
 
 	public static ApplicationContext getApplicationContext(){
-		return new ClassPathXmlApplicationContext("classpath:SpringContext.xml");
+		return new ClassPathXmlApplicationContext("classpath:data-context.xml");
 	}
 }

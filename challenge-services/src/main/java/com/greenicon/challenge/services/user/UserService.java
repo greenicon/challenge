@@ -7,8 +7,8 @@ import java.util.Collection;
 
 import com.greenicon.challenge.data.models.Gang;
 import com.greenicon.challenge.data.models.User;
-import com.greenicon.challenge.services.exceptions.DataNotFoundException;
-import com.greenicon.challenge.services.exceptions.InvalidInputException;
+import com.greenicon.challenge.services.common.exceptions.DataNotFoundException;
+import com.greenicon.challenge.services.common.exceptions.InvalidInputException;
 
 /**
  * @author pranav.gopi

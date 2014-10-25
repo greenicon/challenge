@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.UserLoginRepository;
 import com.greenicon.challenge.data.repositories.services.UserLoginDbService;
 
 @Service
-public class UserLoginServiceImpl implements UserLoginDbService{
+public class UserLoginDbServiceImpl implements UserLoginDbService{
 
 	@Resource
 	UserLoginRepository repository;

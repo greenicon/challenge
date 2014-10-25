@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.MediaRepository;
 import com.greenicon.challenge.data.repositories.services.MediaDbService;
 
 @Service
-public class MediaServiceImpl implements MediaDbService{
+public class MediaDbServiceImpl implements MediaDbService{
 
 	@Resource
 	MediaRepository repository;

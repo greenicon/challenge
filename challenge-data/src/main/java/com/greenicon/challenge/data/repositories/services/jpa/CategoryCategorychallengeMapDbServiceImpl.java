@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.CategoryCategorychallengeMapRep
 import com.greenicon.challenge.data.repositories.services.CategoryCategorychallengeMapDbService;
 
 @Service
-public class CategoryCategorychallengeMapServiceImpl implements CategoryCategorychallengeMapDbService{
+public class CategoryCategorychallengeMapDbServiceImpl implements CategoryCategorychallengeMapDbService{
 
 	@Resource
 	CategoryCategorychallengeMapRepository repository;

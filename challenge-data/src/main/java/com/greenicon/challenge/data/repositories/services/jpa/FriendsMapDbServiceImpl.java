@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.FriendsMapRepository;
 import com.greenicon.challenge.data.repositories.services.FriendsMapDbService;
 
 @Service
-public class FriendsMapServiceImpl implements FriendsMapDbService{
+public class FriendsMapDbServiceImpl implements FriendsMapDbService{
 
 	@Resource
 	FriendsMapRepository repository;

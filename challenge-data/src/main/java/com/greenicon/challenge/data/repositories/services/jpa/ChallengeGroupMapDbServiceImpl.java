@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.ChallengeGroupMapRepository;
 import com.greenicon.challenge.data.repositories.services.ChallengeGroupMapDbService;
 
 @Service
-public class ChallengeGroupMapServiceImpl implements ChallengeGroupMapDbService{
+public class ChallengeGroupMapDbServiceImpl implements ChallengeGroupMapDbService{
 
 	@Resource
 	ChallengeGroupMapRepository repository;

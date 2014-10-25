@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.GangRepository;
 import com.greenicon.challenge.data.repositories.services.GangDbService;
 
 @Service
-public class GangServiceImpl implements GangDbService{
+public class GangDbServiceImpl implements GangDbService{
 
 	@Resource
 	GangRepository repository;

@@ -8,7 +8,7 @@ import com.greenicon.challenge.data.models.ChallengeData;
 import com.greenicon.challenge.data.repositories.services.ChallengeDataDbService;
 
 @Service
-public class ChallengeDataServiceImpl implements ChallengeDataDbService{
+public class ChallengeDataDbServiceImpl implements ChallengeDataDbService{
 
 	public void create(ChallengeData challengeData) {
 		// TODO Auto-generated method stub

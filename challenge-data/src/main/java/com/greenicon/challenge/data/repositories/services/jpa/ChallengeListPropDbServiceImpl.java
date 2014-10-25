@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.ChallengeListPropRepository;
 import com.greenicon.challenge.data.repositories.services.ChallengeListPropDbService;
 
 @Service
-public class ChallengeListPropServiceImpl implements ChallengeListPropDbService{
+public class ChallengeListPropDbServiceImpl implements ChallengeListPropDbService{
 
 	@Resource
 	ChallengeListPropRepository repository;

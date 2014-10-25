@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.LocationRepository;
 import com.greenicon.challenge.data.repositories.services.LocationDbService;
 
 @Service
-public class LocationServiceImpl implements LocationDbService{
+public class LocationDbServiceImpl implements LocationDbService{
 
 	@Resource
 	LocationRepository repository;

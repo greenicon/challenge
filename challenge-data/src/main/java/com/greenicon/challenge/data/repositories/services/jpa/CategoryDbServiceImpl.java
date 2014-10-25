@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.CategoryRepository;
 import com.greenicon.challenge.data.repositories.services.CategoryDbService;
 
 @Service
-public class CategoryServiceImpl implements CategoryDbService{
+public class CategoryDbServiceImpl implements CategoryDbService{
 
 	@Resource
 	CategoryRepository repository;

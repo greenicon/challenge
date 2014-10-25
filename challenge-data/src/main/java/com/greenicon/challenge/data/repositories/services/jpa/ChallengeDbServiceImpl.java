@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.ChallengeRepository;
 import com.greenicon.challenge.data.repositories.services.ChallengeDbService;
 
 @Service
-public class ChallengeServiceImpl implements ChallengeDbService{
+public class ChallengeDbServiceImpl implements ChallengeDbService{
 
 	@Resource
 	ChallengeRepository repository;

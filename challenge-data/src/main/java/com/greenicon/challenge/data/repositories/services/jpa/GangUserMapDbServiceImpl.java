@@ -11,7 +11,7 @@ import com.greenicon.challenge.data.repositories.GangUserMapRepository;
 import com.greenicon.challenge.data.repositories.services.GangUserMapDbService;
 
 @Service
-public class GangUserMapServiceImpl implements GangUserMapDbService{
+public class GangUserMapDbServiceImpl implements GangUserMapDbService{
 
 	@Resource
 	GangUserMapRepository repository;

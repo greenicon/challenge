@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.Category;
 import com.greenicon.challenge.data.repositories.CategoryRepository;
-import com.greenicon.challenge.data.repositories.services.CategoryService;
+import com.greenicon.challenge.data.repositories.services.CategoryDbService;
 
 @Service
-public class CategoryServiceImpl implements CategoryService{
+public class CategoryServiceImpl implements CategoryDbService{
 
 	@Resource
 	CategoryRepository repository;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.ChallengeListUserGangMap;
 
-public interface ChallengeListUserGangMapService {
+public interface ChallengeListUserGangMapDbService {
 	
 	void create(ChallengeListUserGangMap challengeListUserGangMap);
 	void delete(String id);

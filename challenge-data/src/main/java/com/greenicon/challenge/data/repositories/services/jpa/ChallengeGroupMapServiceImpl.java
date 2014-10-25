@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.ChallengeGroupMap;
 import com.greenicon.challenge.data.repositories.ChallengeGroupMapRepository;
-import com.greenicon.challenge.data.repositories.services.ChallengeGroupMapService;
+import com.greenicon.challenge.data.repositories.services.ChallengeGroupMapDbService;
 
 @Service
-public class ChallengeGroupMapServiceImpl implements ChallengeGroupMapService{
+public class ChallengeGroupMapServiceImpl implements ChallengeGroupMapDbService{
 
 	@Resource
 	ChallengeGroupMapRepository repository;

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.UserLogin;
 import com.greenicon.challenge.data.repositories.UserLoginRepository;
-import com.greenicon.challenge.data.repositories.services.UserLoginService;
+import com.greenicon.challenge.data.repositories.services.UserLoginDbService;
 
 @Service
-public class UserLoginServiceImpl implements UserLoginService{
+public class UserLoginServiceImpl implements UserLoginDbService{
 
 	@Resource
 	UserLoginRepository repository;

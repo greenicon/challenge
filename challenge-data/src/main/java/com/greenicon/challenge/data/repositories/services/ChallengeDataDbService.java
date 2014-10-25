@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.ChallengeData;
 
-public interface ChallengeDataService {
+public interface ChallengeDataDbService {
 
 	void create(ChallengeData challengeData);
 	void delete(String id);

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.FriendsMap;
 
-public interface FriendsMapService {
+public interface FriendsMapDbService {
 
 	void create(FriendsMap friendsMap);
 	void delete(String id);

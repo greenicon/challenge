@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.Location;
 
-public interface LocationService {
+public interface LocationDbService {
 	
 	void create(Location challenge);
 	void delete(String id);

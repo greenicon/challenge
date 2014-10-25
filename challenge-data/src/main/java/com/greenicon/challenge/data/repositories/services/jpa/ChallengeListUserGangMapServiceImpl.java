@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.ChallengeListUserGangMap;
 import com.greenicon.challenge.data.repositories.ChallengeListUserGangMapRepository;
-import com.greenicon.challenge.data.repositories.services.ChallengeListUserGangMapService;
+import com.greenicon.challenge.data.repositories.services.ChallengeListUserGangMapDbService;
 
 @Service
-public class ChallengeListUserGangMapServiceImpl implements ChallengeListUserGangMapService{
+public class ChallengeListUserGangMapServiceImpl implements ChallengeListUserGangMapDbService{
 
 	@Resource
 	ChallengeListUserGangMapRepository repository;

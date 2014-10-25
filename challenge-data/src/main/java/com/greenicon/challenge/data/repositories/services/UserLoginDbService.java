@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.UserLogin;
 
-public interface UserLoginService {
+public interface UserLoginDbService {
 
 	void create(UserLogin userLogin);
 	void delete(String id);

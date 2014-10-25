@@ -4,143 +4,143 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.greenicon.challenge.data.repositories.services.CategoryCategorychallengeMapService;
-import com.greenicon.challenge.data.repositories.services.CategoryService;
-import com.greenicon.challenge.data.repositories.services.ChallengeDataService;
-import com.greenicon.challenge.data.repositories.services.ChallengeGroupMapService;
-import com.greenicon.challenge.data.repositories.services.ChallengeListPropService;
-import com.greenicon.challenge.data.repositories.services.ChallengeListService;
-import com.greenicon.challenge.data.repositories.services.ChallengeListUserGangMapService;
-import com.greenicon.challenge.data.repositories.services.ChallengeService;
-import com.greenicon.challenge.data.repositories.services.ChallengeUserGangMapService;
-import com.greenicon.challenge.data.repositories.services.FriendsMapService;
-import com.greenicon.challenge.data.repositories.services.GangService;
-import com.greenicon.challenge.data.repositories.services.GangUserMapService;
-import com.greenicon.challenge.data.repositories.services.LocationService;
-import com.greenicon.challenge.data.repositories.services.MediaService;
-import com.greenicon.challenge.data.repositories.services.UserDataService;
-import com.greenicon.challenge.data.repositories.services.UserLoginService;
-import com.greenicon.challenge.data.repositories.services.UserService;
+import com.greenicon.challenge.data.repositories.services.CategoryCategorychallengeMapDbService;
+import com.greenicon.challenge.data.repositories.services.CategoryDbService;
+import com.greenicon.challenge.data.repositories.services.ChallengeDataDbService;
+import com.greenicon.challenge.data.repositories.services.ChallengeGroupMapDbService;
+import com.greenicon.challenge.data.repositories.services.ChallengeListPropDbService;
+import com.greenicon.challenge.data.repositories.services.ChallengeListDbService;
+import com.greenicon.challenge.data.repositories.services.ChallengeListUserGangMapDbService;
+import com.greenicon.challenge.data.repositories.services.ChallengeDbService;
+import com.greenicon.challenge.data.repositories.services.ChallengeUserGangMapDbService;
+import com.greenicon.challenge.data.repositories.services.FriendsMapDbService;
+import com.greenicon.challenge.data.repositories.services.GangDbService;
+import com.greenicon.challenge.data.repositories.services.GangUserMapDbService;
+import com.greenicon.challenge.data.repositories.services.LocationDbService;
+import com.greenicon.challenge.data.repositories.services.MediaDbService;
+import com.greenicon.challenge.data.repositories.services.UserDataDbService;
+import com.greenicon.challenge.data.repositories.services.UserLoginDbService;
+import com.greenicon.challenge.data.repositories.services.UserDbService;
 
 @Service
 public class RepositoryServiceProvider {
 
 	@Resource
-	CategoryCategorychallengeMapService categoryCategorychallengeMapService;
+	CategoryCategorychallengeMapDbService categoryCategorychallengeMapService;
 	
 	@Resource
-	CategoryService categoryService;
+	CategoryDbService categoryService;
 	
 	@Resource
-	ChallengeDataService challengeDataService;
+	ChallengeDataDbService challengeDataService;
 	
 	@Resource
-	ChallengeGroupMapService challengeGroupMapService;
+	ChallengeGroupMapDbService challengeGroupMapService;
 	
 	@Resource
-	ChallengeListPropService challengeListPropService;
+	ChallengeListPropDbService challengeListPropService;
 	
 	@Resource
-	ChallengeListService challengeListService;
+	ChallengeListDbService challengeListService;
 	
 	@Resource
-	ChallengeListUserGangMapService challengeListUserGangMapService;
+	ChallengeListUserGangMapDbService challengeListUserGangMapService;
 	
 	@Resource
-	ChallengeService challengeService;
+	ChallengeDbService challengeService;
 
 	@Resource
-	ChallengeUserGangMapService challengeUserGangMapService;
+	ChallengeUserGangMapDbService challengeUserGangMapService;
 	
 	@Resource
-	FriendsMapService friendsMapService;
+	FriendsMapDbService friendsMapService;
 	
 	@Resource
-	GangService gangService;
+	GangDbService gangService;
 	
 	@Resource
-	GangUserMapService gangUserMapService;
+	GangUserMapDbService gangUserMapService;
 	
 	@Resource
-	LocationService locationService;
+	LocationDbService locationService;
 	
 	@Resource
-	MediaService mediaService;
+	MediaDbService mediaService;
 	
 	@Resource
-	UserDataService userDataService;
+	UserDataDbService userDataService;
 	
 	@Resource
-	UserLoginService userLoginService;
+	UserLoginDbService userLoginService;
 	
 	@Resource
-	UserService userService;
+	UserDbService userService;
 	
-	public CategoryService getCategoryService() {
+	public CategoryDbService getCategoryService() {
 		return categoryService;
 	}
 
-	public CategoryCategorychallengeMapService getCategoryCategorychallengeMapService() {
+	public CategoryCategorychallengeMapDbService getCategoryCategorychallengeMapService() {
 		return categoryCategorychallengeMapService;
 	}
 
-	public ChallengeDataService getChallengeDataService() {
+	public ChallengeDataDbService getChallengeDataService() {
 		return challengeDataService;
 	}
 
-	public ChallengeGroupMapService getChallengeGroupMapService() {
+	public ChallengeGroupMapDbService getChallengeGroupMapService() {
 		return challengeGroupMapService;
 	}
 
-	public ChallengeListPropService getChallengeListPropService() {
+	public ChallengeListPropDbService getChallengeListPropService() {
 		return challengeListPropService;
 	}
 
-	public ChallengeListService getChallengeListService() {
+	public ChallengeListDbService getChallengeListService() {
 		return challengeListService;
 	}
 
-	public ChallengeListUserGangMapService getChallengeListUserGangMapService() {
+	public ChallengeListUserGangMapDbService getChallengeListUserGangMapService() {
 		return challengeListUserGangMapService;
 	}
 
-	public ChallengeService getChallengeService() {
+	public ChallengeDbService getChallengeService() {
 		return challengeService;
 	}
 
-	public ChallengeUserGangMapService getChallengeUserGangMapService() {
+	public ChallengeUserGangMapDbService getChallengeUserGangMapService() {
 		return challengeUserGangMapService;
 	}
 
-	public FriendsMapService getFriendsMapService() {
+	public FriendsMapDbService getFriendsMapService() {
 		return friendsMapService;
 	}
 
-	public GangService getGangService() {
+	public GangDbService getGangService() {
 		return gangService;
 	}
 
-	public GangUserMapService getGangUserMapService() {
+	public GangUserMapDbService getGangUserMapService() {
 		return gangUserMapService;
 	}
 
-	public LocationService getLocationService() {
+	public LocationDbService getLocationService() {
 		return locationService;
 	}
 
-	public MediaService getMediaService() {
+	public MediaDbService getMediaService() {
 		return mediaService;
 	}
 
-	public UserDataService getUserDataService() {
+	public UserDataDbService getUserDataService() {
 		return userDataService;
 	}
 
-	public UserLoginService getUserLoginService() {
+	public UserLoginDbService getUserLoginService() {
 		return userLoginService;
 	}
 
-	public UserService getUserService() {
+	public UserDbService getUserService() {
 		return userService;
 	}
 }

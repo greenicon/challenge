@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.Gang;
 import com.greenicon.challenge.data.repositories.GangRepository;
-import com.greenicon.challenge.data.repositories.services.GangService;
+import com.greenicon.challenge.data.repositories.services.GangDbService;
 
 @Service
-public class GangServiceImpl implements GangService{
+public class GangServiceImpl implements GangDbService{
 
 	@Resource
 	GangRepository repository;

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.Category;
 
-public interface CategoryService {
+public interface CategoryDbService {
 
 	void create(Category category);
 	void delete(String id);

@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.ChallengeList;
 import com.greenicon.challenge.data.repositories.ChallengeListRepository;
-import com.greenicon.challenge.data.repositories.services.ChallengeListService;
+import com.greenicon.challenge.data.repositories.services.ChallengeListDbService;
 
 @Service
-public class ChallengeListServiceImpl implements ChallengeListService{
+public class ChallengeListServiceImpl implements ChallengeListDbService{
 
 	@Resource
 	ChallengeListRepository repository;

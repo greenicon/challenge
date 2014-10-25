@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.MediaData;
 import com.greenicon.challenge.data.repositories.MediaDataRepository;
-import com.greenicon.challenge.data.repositories.services.MediaDataService;
+import com.greenicon.challenge.data.repositories.services.MediaDataDbService;
 
 @Service
-public class MediaDataServiceImpl implements MediaDataService{
+public class MediaDataServiceImpl implements MediaDataDbService{
 
 	@Resource
 	MediaDataRepository repository;

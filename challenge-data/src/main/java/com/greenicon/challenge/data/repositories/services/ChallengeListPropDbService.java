@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.ChallengeListProp;
 
-public interface ChallengeListPropService {
+public interface ChallengeListPropDbService {
 	
 	void create(ChallengeListProp challengeListProp);
 	void delete(String id);

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.Media;
 
-public interface MediaService {
+public interface MediaDbService {
 
 	void create(Media media);
 	void delete(String id);

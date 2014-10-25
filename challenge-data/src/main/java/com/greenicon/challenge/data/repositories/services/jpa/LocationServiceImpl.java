@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.Location;
 import com.greenicon.challenge.data.repositories.LocationRepository;
-import com.greenicon.challenge.data.repositories.services.LocationService;
+import com.greenicon.challenge.data.repositories.services.LocationDbService;
 
 @Service
-public class LocationServiceImpl implements LocationService{
+public class LocationServiceImpl implements LocationDbService{
 
 	@Resource
 	LocationRepository repository;

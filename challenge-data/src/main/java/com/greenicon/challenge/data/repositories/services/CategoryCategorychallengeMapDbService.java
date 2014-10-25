@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.CategoryCategorychallengeMap;
 
-public interface CategoryCategorychallengeMapService {
+public interface CategoryCategorychallengeMapDbService {
 
 	void create(CategoryCategorychallengeMap categoryCategorychallengeMap);
 	void delete(String id);

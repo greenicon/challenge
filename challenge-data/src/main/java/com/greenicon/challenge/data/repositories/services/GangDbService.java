@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.greenicon.challenge.data.models.Gang;
 
-public interface GangService {
+public interface GangDbService {
 
 	void create(Gang gang);
 	void delete(String id);

@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.ChallengeData;
-import com.greenicon.challenge.data.repositories.services.ChallengeDataService;
+import com.greenicon.challenge.data.repositories.services.ChallengeDataDbService;
 
 @Service
-public class ChallengeDataServiceImpl implements ChallengeDataService{
+public class ChallengeDataServiceImpl implements ChallengeDataDbService{
 
 	public void create(ChallengeData challengeData) {
 		// TODO Auto-generated method stub

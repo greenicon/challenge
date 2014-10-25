@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.CategoryCategorychallengeMap;
 import com.greenicon.challenge.data.repositories.CategoryCategorychallengeMapRepository;
-import com.greenicon.challenge.data.repositories.services.CategoryCategorychallengeMapService;
+import com.greenicon.challenge.data.repositories.services.CategoryCategorychallengeMapDbService;
 
 @Service
-public class CategoryCategorychallengeMapServiceImpl implements CategoryCategorychallengeMapService{
+public class CategoryCategorychallengeMapServiceImpl implements CategoryCategorychallengeMapDbService{
 
 	@Resource
 	CategoryCategorychallengeMapRepository repository;

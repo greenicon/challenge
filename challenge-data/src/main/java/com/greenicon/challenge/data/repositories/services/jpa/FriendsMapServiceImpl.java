@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.greenicon.challenge.data.models.FriendsMap;
 import com.greenicon.challenge.data.repositories.FriendsMapRepository;
-import com.greenicon.challenge.data.repositories.services.FriendsMapService;
+import com.greenicon.challenge.data.repositories.services.FriendsMapDbService;
 
 @Service
-public class FriendsMapServiceImpl implements FriendsMapService{
+public class FriendsMapServiceImpl implements FriendsMapDbService{
 
 	@Resource
 	FriendsMapRepository repository;

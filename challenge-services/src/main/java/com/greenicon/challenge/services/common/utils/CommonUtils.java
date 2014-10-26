@@ -1,6 +1,5 @@
 package com.greenicon.challenge.services.common.utils;
 
-import org.apache.log4j.Logger;
 
 /**
  * 
@@ -9,7 +8,7 @@ import org.apache.log4j.Logger;
  */
 public class CommonUtils {
 
-		private static Logger logger = Logger.getLogger(CommonUtils.class);
+		//private static Logger logger = Logger.getLogger(CommonUtils.class);
 		
 		/**
 		 * <strong>

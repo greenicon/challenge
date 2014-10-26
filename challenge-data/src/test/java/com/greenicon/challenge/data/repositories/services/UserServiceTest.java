@@ -25,7 +25,7 @@ import com.greenicon.challenge.data.util.TestUtils;
 public class UserServiceTest {
 
 	static RepositoryServiceProvider rsp;
-	static UserService userService;
+	static UserDbService userService;
 	/**
 	 * @throws java.lang.Exception
 	 */
@@ -40,11 +40,11 @@ public class UserServiceTest {
 	public void setUp() throws Exception {
 		ApplicationContext applicationContext = TestUtils.getApplicationContext();
 		rsp = applicationContext.getBean(RepositoryServiceProvider.class);
-		userService = rsp.getUserService();
+		userService = rsp.getUserDbService();
 	}
 
 	/**
-	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserService#create(com.greenicon.challenge.data.models.User)}.
+	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserDataDbService#create(com.greenicon.challenge.data.models.User)}.
 	 */
 	@Test
 	public void testCreate() {
@@ -61,7 +61,7 @@ public class UserServiceTest {
 	}
 
 	/**
-	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserService#delete(java.lang.String)}.
+	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserDataDbService#delete(java.lang.String)}.
 	 */
 	@Test
 	public void testDelete() {
@@ -73,7 +73,7 @@ public class UserServiceTest {
 	}
 
 	/**
-	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserService#update(com.greenicon.challenge.data.models.User)}.
+	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserDataDbService#update(com.greenicon.challenge.data.models.User)}.
 	 */
 	@Ignore
 	@Test
@@ -82,7 +82,7 @@ public class UserServiceTest {
 	}
 
 	/**
-	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserService#find(java.lang.String)}.
+	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserDataDbService#find(java.lang.String)}.
 	 */
 	@Ignore
 	@Test
@@ -91,7 +91,7 @@ public class UserServiceTest {
 	}
 
 	/**
-	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserService#findAll()}.
+	 * Test method for {@link com.greenicon.challenge.data.repositories.services.UserDataDbService#findAll()}.
 	 */
 	@Test
 	public void testFindAll() {

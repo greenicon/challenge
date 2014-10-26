@@ -35,4 +35,8 @@ public class ChallengeDbServiceImpl implements ChallengeDbService{
 	public List<Challenge> findAll() {
 		return repository.findAll();
 	}
+
+	public List<Challenge> findByByCategory(String category) {
+		return repository.findByCategory(category);
+	}
 }

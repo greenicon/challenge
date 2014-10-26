@@ -26,121 +26,121 @@ import com.greenicon.challenge.data.repositories.services.UserDbService;
 public class RepositoryServiceProvider {
 
 	@Resource
-	CategoryCategorychallengeMapDbService categoryCategorychallengeMapService;
+	CategoryCategorychallengeMapDbService categoryCategorychallengeMapDbService;
 	
 	@Resource
-	CategoryDbService categoryService;
+	CategoryDbService categoryDbService;
 	
 	@Resource
-	ChallengeDataDbService challengeDataService;
+	ChallengeDataDbService challengeDataDbService;
 	
 	@Resource
-	ChallengeGroupMapDbService challengeGroupMapService;
+	ChallengeGroupMapDbService challengeGroupMapDbService;
 	
 	@Resource
-	ChallengeListPropDbService challengeListPropService;
+	ChallengeListPropDbService challengeListPropDbService;
 	
 	@Resource
 	ChallengeListDbService challengeListService;
 	
 	@Resource
-	ChallengeListUserGangMapDbService challengeListUserGangMapService;
+	ChallengeListUserGangMapDbService challengeListUserGangMapDbService;
 	
 	@Resource
-	ChallengeDbService challengeService;
+	ChallengeDbService challengeDbService;
 
 	@Resource
-	ChallengeUserGangMapDbService challengeUserGangMapService;
+	ChallengeUserGangMapDbService challengeUserGangMapDbService;
 	
 	@Resource
-	FriendsMapDbService friendsMapService;
+	FriendsMapDbService friendsMapDbService;
 	
 	@Resource
-	GangDbService gangService;
+	GangDbService gangDbService;
 	
 	@Resource
-	GangUserMapDbService gangUserMapService;
+	GangUserMapDbService gangUserMapDbService;
 	
 	@Resource
-	LocationDbService locationService;
+	LocationDbService locationDbService;
 	
 	@Resource
-	MediaDbService mediaService;
+	MediaDbService mediaDbService;
 	
 	@Resource
-	UserDataDbService userDataService;
+	UserDataDbService userDataDbService;
 	
 	@Resource
-	UserLoginDbService userLoginService;
+	UserLoginDbService userLoginDbService;
 	
 	@Resource
-	UserDbService userService;
-	
-	public CategoryDbService getCategoryService() {
-		return categoryService;
+	UserDbService userDbService;
+
+	public CategoryCategorychallengeMapDbService getCategoryCategorychallengeMapDbService() {
+		return categoryCategorychallengeMapDbService;
 	}
 
-	public CategoryCategorychallengeMapDbService getCategoryCategorychallengeMapService() {
-		return categoryCategorychallengeMapService;
+	public CategoryDbService getCategoryDbService() {
+		return categoryDbService;
 	}
 
-	public ChallengeDataDbService getChallengeDataService() {
-		return challengeDataService;
+	public ChallengeDataDbService getChallengeDataDbService() {
+		return challengeDataDbService;
 	}
 
-	public ChallengeGroupMapDbService getChallengeGroupMapService() {
-		return challengeGroupMapService;
+	public ChallengeGroupMapDbService getChallengeGroupMapDbService() {
+		return challengeGroupMapDbService;
 	}
 
-	public ChallengeListPropDbService getChallengeListPropService() {
-		return challengeListPropService;
+	public ChallengeListPropDbService getChallengeListPropDbService() {
+		return challengeListPropDbService;
 	}
 
 	public ChallengeListDbService getChallengeListService() {
 		return challengeListService;
 	}
 
-	public ChallengeListUserGangMapDbService getChallengeListUserGangMapService() {
-		return challengeListUserGangMapService;
+	public ChallengeListUserGangMapDbService getChallengeListUserGangMapDbService() {
+		return challengeListUserGangMapDbService;
 	}
 
-	public ChallengeDbService getChallengeService() {
-		return challengeService;
+	public ChallengeDbService getChallengeDbService() {
+		return challengeDbService;
 	}
 
-	public ChallengeUserGangMapDbService getChallengeUserGangMapService() {
-		return challengeUserGangMapService;
+	public ChallengeUserGangMapDbService getChallengeUserGangMapDbService() {
+		return challengeUserGangMapDbService;
 	}
 
-	public FriendsMapDbService getFriendsMapService() {
-		return friendsMapService;
+	public FriendsMapDbService getFriendsMapDbService() {
+		return friendsMapDbService;
 	}
 
-	public GangDbService getGangService() {
-		return gangService;
+	public GangDbService getGangDbService() {
+		return gangDbService;
 	}
 
-	public GangUserMapDbService getGangUserMapService() {
-		return gangUserMapService;
+	public GangUserMapDbService getGangUserMapDbService() {
+		return gangUserMapDbService;
 	}
 
-	public LocationDbService getLocationService() {
-		return locationService;
+	public LocationDbService getLocationDbService() {
+		return locationDbService;
 	}
 
-	public MediaDbService getMediaService() {
-		return mediaService;
+	public MediaDbService getMediaDbService() {
+		return mediaDbService;
 	}
 
-	public UserDataDbService getUserDataService() {
-		return userDataService;
+	public UserDataDbService getUserDataDbService() {
+		return userDataDbService;
 	}
 
-	public UserLoginDbService getUserLoginService() {
-		return userLoginService;
+	public UserLoginDbService getUserLoginDbService() {
+		return userLoginDbService;
 	}
 
-	public UserDbService getUserService() {
-		return userService;
+	public UserDbService getUserDbService() {
+		return userDbService;
 	}
 }

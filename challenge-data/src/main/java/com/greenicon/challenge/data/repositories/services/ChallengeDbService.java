@@ -11,4 +11,6 @@ public interface ChallengeDbService {
 	void update(Challenge challenge);	
 	Challenge find(String id);
 	List<Challenge> findAll();
+	
+	List<Challenge> findByByCategory(String category);
 }

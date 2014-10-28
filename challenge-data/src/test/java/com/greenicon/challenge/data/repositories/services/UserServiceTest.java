@@ -134,7 +134,7 @@ public class UserServiceTest {
 		FriendsMap friendsMap = new FriendsMap();
 		friendsMap.setFriendId("2c93890849312a8d0149312a93c30000");
 		friendsMap.setUser(user);
-		rsp.getFriendsMapService().create(friendsMap);
+		rsp.getFriendsMapDbService().create(friendsMap);
 		//friendsMap.setId("1");
 //		System.out.println(friendsMap);
 //		user.addFriendsMaps(friendsMap);

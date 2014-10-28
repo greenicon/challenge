@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
 		User user = null;
 		if(null != rsp && null != userId){
 			try{
-				user = rsp.getUserService().find(userId);
+				user = rsp.getUserDbService().find(userId);
 			}catch(Throwable e){
 				throw new DependencyException(e.getMessage());
 			}
@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 		List<User> users = null;
 		if(null != rsp && !CommonUtils.isEmptyString(userName)){
 			try{
-				users = rsp.getUserService().findByName(userName);
+				users = rsp.getUserDbService().findByName(userName);
 			}catch(Throwable e){
 				throw new DependencyException(e.getMessage());
 			}
@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService {
 			logger.debug("Create User->"+user);
 		}
 		if(UserUtils.validateUser(user)){
-			rsp.getUserService().create(user);
+			rsp.getUserDbService().create(user);
 			logger.info("User added to db->"+user);
 		}else{
 			logger.error("User validation failed for user:"+user);
@@ -89,7 +89,7 @@ public class UserServiceImpl implements UserService {
 			logger.debug("Update User->"+user);
 		}
 		if(UserUtils.validateUser(user)){
-			rsp.getUserService().update(user);
+			rsp.getUserDbService().update(user);
 			logger.info("User updated to db->"+user);
 		}else{
 			logger.error("User validation failed for user:"+user);
@@ -122,7 +122,7 @@ public class UserServiceImpl implements UserService {
 			logger.debug("Add friends to user ->"+user+", friends ->"+friends);
 		}
 		for(User friend: friends){
-			rsp.getUserService().addFriend(user, friend);
+			rsp.getUserDbService().addFriend(user, friend);
 		}
 		if(logger.isDebugEnabled()){
 			logger.debug("Added friends to user ->"+user+", friends ->"+friends);

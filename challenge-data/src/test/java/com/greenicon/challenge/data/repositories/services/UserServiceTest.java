@@ -7,6 +7,7 @@ import static org.junit.Assert.fail;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -14,6 +15,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 
+import com.greenicon.challenge.data.models.FriendsMap;
 import com.greenicon.challenge.data.models.User;
 import com.greenicon.challenge.data.repositories.services.provider.RepositoryServiceProvider;
 import com.greenicon.challenge.data.util.TestUtils;
@@ -37,7 +39,11 @@ public class UserServiceTest {
 	 * @throws java.lang.Exception
 	 */
 	@Before
-	public void setUp() throws Exception {
+	public  void setUp() throws Exception {
+		setUpFields();
+	}
+	
+	static void setUpFields(){
 		ApplicationContext applicationContext = TestUtils.getApplicationContext();
 		rsp = applicationContext.getBean(RepositoryServiceProvider.class);
 		userService = rsp.getUserDbService();
@@ -49,15 +55,15 @@ public class UserServiceTest {
 	@Test
 	public void testCreate() {
 		User user = new User();
-		user.setFirstName("First");
-		user.setLastName("sfc");
+		user.setFirstName("pranav");
+		user.setLastName("gopi");
 		user.setEmail("a");
 		user.setMobilenumber("22");
 		user.setDob(new Date());
 		user.setCoverImageid("1");
 		user.setProfileImageid("2");
-		
-		userService.create(user);
+		System.out.println(user);
+		//userService.create(user);
 	}
 
 	/**
@@ -95,7 +101,50 @@ public class UserServiceTest {
 	 */
 	@Test
 	public void testFindAll() {
-		System.out.println(userService.findAll());
+		List<User> users = userService.findAll();	
+		for(User user:users){
+			System.out.println(user);
+		}
+	}
+	
+	@Test
+	public void testFindByName(){
+		System.out.println(userService.findByName("pranav"));
+	}
+	
+	@Test
+	public void testFindFriends(){
+		User user = userService.findByName("pranav").get(0);
+		System.out.println(user);
+		FriendsMap friendsMap = new FriendsMap();
+		friendsMap.setFriendId("2c93890849312a8d0149312a93c30000");
+		System.out.println(friendsMap);
+		user.addFriendsMaps(friendsMap);
+		System.out.println(friendsMap);
+		System.out.println(user);
+		userService.update(user);
+		System.out.println("done");
+		
+	}
+	
+	public static void main(String[] args) throws Exception {
+		setUpFields();
+		User user = userService.findByName("pranav").get(0);
+		System.out.println(user);
+		FriendsMap friendsMap = new FriendsMap();
+		friendsMap.setFriendId("2c93890849312a8d0149312a93c30000");
+		friendsMap.setUser(user);
+		rsp.getFriendsMapService().create(friendsMap);
+		//friendsMap.setId("1");
+//		System.out.println(friendsMap);
+//		user.addFriendsMaps(friendsMap);
+//		System.out.println(friendsMap);
+//		System.out.println(user);
+//		userService.update(user);
+		System.out.println("done");
+		
+		user = userService.findByName("pranav").get(0);
+		System.out.println(user);
 	}
 
 }

@@ -66,12 +66,8 @@ public class User implements Serializable {
 	private Timestamp updatedts;
 
 	//bi-directional many-to-one association to FriendsMap
-	@OneToMany(mappedBy="user1", fetch=FetchType.EAGER)
-	private List<FriendsMap> friendsMaps1;
-
-	//bi-directional many-to-one association to FriendsMap
-	@OneToMany(mappedBy="user2", fetch=FetchType.EAGER)
-	private List<FriendsMap> friendsMaps2;
+	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
+	private List<FriendsMap> friendsMaps;  
 
 	//bi-directional many-to-one association to GangUserMap
 	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
@@ -193,48 +189,26 @@ public class User implements Serializable {
 		this.updatedts = updatedts;
 	}
 
-	public List<FriendsMap> getFriendsMaps1() {
-		return this.friendsMaps1;
+	public List<FriendsMap> getFriendsMaps() {
+		return this.friendsMaps;
 	}
 
-	public void setFriendsMaps1(List<FriendsMap> friendsMaps1) {
-		this.friendsMaps1 = friendsMaps1;
+	public void setFriendsMaps(List<FriendsMap> friendsMaps) {
+		this.friendsMaps = friendsMaps;
 	}
 
-	public FriendsMap addFriendsMaps1(FriendsMap friendsMaps1) {
-		getFriendsMaps1().add(friendsMaps1);
-		friendsMaps1.setUser1(this);
+	public FriendsMap addFriendsMaps(FriendsMap friendsMaps) {
+		getFriendsMaps().add(friendsMaps);
+		friendsMaps.setUser(this);
 
-		return friendsMaps1;
+		return friendsMaps;
 	}
 
-	public FriendsMap removeFriendsMaps1(FriendsMap friendsMaps1) {
-		getFriendsMaps1().remove(friendsMaps1);
-		friendsMaps1.setUser1(null);
+	public FriendsMap removeFriendsMaps(FriendsMap friendsMaps) {
+		getFriendsMaps().remove(friendsMaps);
+		friendsMaps.setUser(null);
 
-		return friendsMaps1;
-	}
-
-	public List<FriendsMap> getFriendsMaps2() {
-		return this.friendsMaps2;
-	}
-
-	public void setFriendsMaps2(List<FriendsMap> friendsMaps2) {
-		this.friendsMaps2 = friendsMaps2;
-	}
-
-	public FriendsMap addFriendsMaps2(FriendsMap friendsMaps2) {
-		getFriendsMaps2().add(friendsMaps2);
-		friendsMaps2.setUser2(this);
-
-		return friendsMaps2;
-	}
-
-	public FriendsMap removeFriendsMaps2(FriendsMap friendsMaps2) {
-		getFriendsMaps2().remove(friendsMaps2);
-		friendsMaps2.setUser2(null);
-
-		return friendsMaps2;
+		return friendsMaps;
 	}
 
 	public List<GangUserMap> getGangUserMaps() {
@@ -294,15 +268,15 @@ public class User implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", coverImageid=" + coverImageid
+		return "User [firstName=" + firstName+ ", lastName="
+				+ lastName + ", id=" + id + ", coverImageid=" + coverImageid
 				+ ", createdts=" + createdts + ", currentLocationid="
 				+ currentLocationid + ", dob=" + dob + ", email=" + email
-				+ ", firstName=" + firstName + ", gender=" + gender
-				+ ", homeLocationid=" + homeLocationid + ", lastName="
-				+ lastName + ", mobilenumber=" + mobilenumber
+				+ ", gender=" + gender
+				+ ", homeLocationid=" + homeLocationid  + ", mobilenumber=" + mobilenumber
 				+ ", profileImageid=" + profileImageid + ", updatedts="
-				+ updatedts + ", friendsMaps1=" + friendsMaps1
-				+ ", friendsMaps2=" + friendsMaps2 + ", gangUserMaps="
+				+ updatedts + ", friendsMap=" + friendsMaps
+				+ ", gangUserMaps="
 				+ gangUserMaps + ", userLogin=" + userLogin + ", userData="
 				+ userData + "]";
 	}

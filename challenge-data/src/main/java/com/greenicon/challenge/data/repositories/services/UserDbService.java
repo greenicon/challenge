@@ -11,4 +11,10 @@ public interface UserDbService {
 	void update(User user);	
 	User find(String id);
 	List<User> findAll();
+	
+	List<User> findByName(String firstName);
+	
+	void addFriend(User user, User friend);
+	
+	//List<User> findFriends(User user);
 }

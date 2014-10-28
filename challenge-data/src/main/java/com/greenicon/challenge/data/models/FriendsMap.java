@@ -1,7 +1,11 @@
 package com.greenicon.challenge.data.models;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import java.sql.Timestamp;
 
 
@@ -16,25 +20,26 @@ public class FriendsMap implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(unique=true, nullable=false, length=64)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
+	@Column(unique=true, nullable = false, length=64)
 	private String id;
 
-	@Column(nullable=false)
+	@Column
 	private Timestamp createdts;
 
-	@Column(nullable=false)
+	@Column
 	private Timestamp updatedts;
+	
+	@Column(name="FRIEND_ID")
+	private String friendId;
 
+	
 	//bi-directional many-to-one association to User
 	@ManyToOne
 	@JoinColumn(name="USER_ID", nullable=false)
-	private User user1;
+	private User user;
 
-	//bi-directional many-to-one association to User
-	@ManyToOne
-	@JoinColumn(name="FRIEND_ID", nullable=false)
-	private User user2;
 
 	public FriendsMap() {
 	}
@@ -63,20 +68,44 @@ public class FriendsMap implements Serializable {
 		this.updatedts = updatedts;
 	}
 
-	public User getUser1() {
-		return this.user1;
+	/**
+	 * @return the friendId
+	 */
+	public String getFriendId() {
+		return friendId;
 	}
 
-	public void setUser1(User user1) {
-		this.user1 = user1;
+	/**
+	 * @param friendId the friendId to set
+	 */
+	public void setFriendId(String friendId) {
+		this.friendId = friendId;
 	}
 
-	public User getUser2() {
-		return this.user2;
+	/**
+	 * @return the user
+	 */
+	public User getUser() {
+		return user;
 	}
 
-	public void setUser2(User user2) {
-		this.user2 = user2;
+	/**
+	 * @param user the user to set
+	 */
+	public void setUser(User user) {
+		this.user = user;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "FriendsMap [id=" + id  + ", userId=" + (user == null ? null :user.getId()) 
+				+ ", friendId=" + friendId
+				+ ", createdts=" + createdts
+				+ ", updatedts=" + updatedts + "]";
+	}
+	
 
 }

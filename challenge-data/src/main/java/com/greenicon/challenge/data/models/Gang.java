@@ -1,7 +1,11 @@
 package com.greenicon.challenge.data.models;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -17,32 +21,33 @@ public class Gang implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(unique=true, nullable=false, length=64)
 	private String id;
 
-	@Column(name="COVER_IMAGEID", nullable=false, length=64)
+	@Column(name="COVER_IMAGEID", length=64)
 	private String coverImageid;
 
-	@Column(nullable=false)
+	@Column
 	private Timestamp createdts;
 
 	@Column(nullable=false, length=256)
 	private String description;
 
-	@Column(name="LOCATION_ID", nullable=false, length=64)
+	@Column(name="LOCATION_ID", length=64)
 	private String locationId;
 
 	@Column(nullable=false, length=128)
 	private String name;
 
-	@Column(name="PROFILE_IMAGEID", nullable=false, length=64)
+	@Column(name="PROFILE_IMAGEID", length=64)
 	private String profileImageid;
 
-	@Column(nullable=false, length=64)
+	@Column(length=64)
 	private String theme;
 
-	@Column(nullable=false)
+	@Column
 	private Timestamp updatedts;
 
 	//bi-directional many-to-one association to GangUserMap

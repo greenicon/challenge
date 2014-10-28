@@ -7,7 +7,9 @@ import java.util.Collection;
 
 import com.greenicon.challenge.data.models.Gang;
 import com.greenicon.challenge.data.models.User;
+import com.greenicon.challenge.services.common.exceptions.ChallengeException;
 import com.greenicon.challenge.services.common.exceptions.DataNotFoundException;
+import com.greenicon.challenge.services.common.exceptions.DependencyException;
 import com.greenicon.challenge.services.common.exceptions.InvalidInputException;
 
 /**
@@ -16,22 +18,22 @@ import com.greenicon.challenge.services.common.exceptions.InvalidInputException;
  */
 public interface UserService {
 	
-	User getUser(String userId) throws DataNotFoundException;
+	User getUser(String userId) throws ChallengeException;
 	
-	Collection<User> getUsers(String userName) throws DataNotFoundException;
+	Collection<User> getUsers(String userName) throws ChallengeException;
 	
-	void addUser(User user) throws InvalidInputException;
+	void addUser(User user) throws ChallengeException;
 	
-	void updateUser(User user) throws InvalidInputException;
+	void updateUser(User user) throws ChallengeException;
 	
 	/* Friends */
-	Collection<User> getUserFriends(User user) throws DataNotFoundException;
-	void addUserFriends(Collection<User> friends) throws InvalidInputException;
+	//Collection<User> getUserFriends(User user) throws ChallengeException;
+	void addUserFriends(User user, Collection<User> friends) throws ChallengeException;
 	
 	
 	/* Gangs */
-	Collection<Gang> getUserGangs(User user) throws DataNotFoundException;
-	void addGangs(Collection<Gang> gangs) throws InvalidInputException;
+	Collection<Gang> getUserGangs(User user) throws ChallengeException;
+	void addGangs(Collection<Gang> gangs) throws ChallengeException;
 	
 	/* */
 

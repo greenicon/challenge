@@ -70,6 +70,18 @@
 		<spring.data.version>1.4.1.RELEASE</spring.data.version>
 		<hibernate.version>4.3.0.Final</hibernate.version>
 	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 
 

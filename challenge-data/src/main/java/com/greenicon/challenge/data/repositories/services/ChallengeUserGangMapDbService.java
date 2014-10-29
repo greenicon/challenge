@@ -11,4 +11,6 @@ public interface ChallengeUserGangMapDbService {
 	void update(ChallengeUserGangMap challengeUserGangMap);	
 	ChallengeUserGangMap find(String id);
 	List<ChallengeUserGangMap> findAll();
+	
+	List<String> findByChallengeIdAndState(String challengeeId, String state);
 }

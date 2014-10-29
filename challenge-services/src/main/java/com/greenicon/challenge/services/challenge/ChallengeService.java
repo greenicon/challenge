@@ -1,5 +1,6 @@
 package com.greenicon.challenge.services.challenge;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 
 import com.greenicon.challenge.data.models.Challenge;
@@ -101,7 +102,7 @@ public interface ChallengeService {
 	 * @return
 	 * @throws DataNotFoundException
 	 */
-	Collection<Challenge> getChallengesCreatedAfter(long timestamp) throws DataNotFoundException;
+	Collection<Challenge> getChallengesCreatedAfter(Timestamp timestamp) throws DataNotFoundException;
 	
 	/**
 	 * 

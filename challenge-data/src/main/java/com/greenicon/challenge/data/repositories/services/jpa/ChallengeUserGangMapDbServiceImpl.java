@@ -35,4 +35,9 @@ public class ChallengeUserGangMapDbServiceImpl implements ChallengeUserGangMapDb
 	public List<ChallengeUserGangMap> findAll() {
 		return repository.findAll();
 	}
+
+	public List<String> findByChallengeIdAndState(String challengeeId,
+			String state) {
+		return repository.findByChallengeIdAndState(challengeeId, state);
+	}
 }

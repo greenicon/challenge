@@ -29,6 +29,9 @@ public class Challenge implements Serializable {
 
 	@Column(nullable=false, length=256)
 	private String description;
+	
+	@Column(nullable=false, length=256)
+	private String category;
 
 	@Column(name="LOCATION_ID", nullable=false, length=64)
 	private String locationId;
@@ -67,6 +70,19 @@ public class Challenge implements Serializable {
 	public Challenge() {
 	}
 
+	@Override
+	public String toString() {
+		return "Challenge [id=" + id + ", coverImageid=" + coverImageid
+				+ ", createdts=" + createdts + ", description=" + description
+				+ ", category=" + category + ", locationId=" + locationId
+				+ ", name=" + name + ", profileImageid=" + profileImageid
+				+ ", type=" + type + ", updatedts=" + updatedts + ", userId="
+				+ userId + ", challengeData=" + challengeData
+				+ ", challengeGroupMaps1=" + challengeGroupMaps1
+				+ ", challengeGroupMaps2=" + challengeGroupMaps2
+				+ ", challengeUserGangMaps=" + challengeUserGangMaps + "]";
+	}
+
 	public String getId() {
 		return this.id;
 	}
@@ -97,6 +113,14 @@ public class Challenge implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getLocationId() {

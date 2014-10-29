@@ -1,5 +1,7 @@
 package com.greenicon.challenge.services;
 
+import java.sql.Timestamp;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,7 +15,7 @@ import com.greenicon.challenge.services.common.exceptions.DataNotFoundException;
  */
 public class App 
 {
-    public static void main( String[] args ) throws DataNotFoundException
+	public static void main( String[] args ) throws DataNotFoundException
     {
     	ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:services-context.xml");
 		
@@ -30,6 +32,8 @@ public class App
     	
     	ChallengeService challengeService = ctx.getBean(ChallengeService.class);
     	
-    	System.out.println(challengeService.getChallengeById(1+""));
+    	Timestamp ts = new Timestamp(2014-1900, 10-1, 27, 20, 35, 31, 0);
+    	System.out.println(ts.toString());
+    	System.out.println(challengeService.getChallengesCreatedAfter(ts).size());
     }
 }

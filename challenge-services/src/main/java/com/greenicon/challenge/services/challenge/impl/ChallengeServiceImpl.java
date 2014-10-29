@@ -1,5 +1,6 @@
 package com.greenicon.challenge.services.challenge.impl;
 
+import java.sql.Timestamp;
 import java.util.Collection;
 
 import javax.annotation.Resource;
@@ -17,7 +18,7 @@ public class ChallengeServiceImpl implements ChallengeService{
 
 	@Resource
 	RepositoryServiceProvider rsp;
-
+	
 	public Challenge getChallengeById(String challengeId)
 			throws DataNotFoundException {
 		return rsp.getChallengeDbService().find(challengeId);
@@ -30,20 +31,17 @@ public class ChallengeServiceImpl implements ChallengeService{
 
 	public Collection<Challenge> getChallengesByTag(String tag)
 			throws DataNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return null;//	TODO
 	}
 
 	public Collection<Challenge> getChallengesByTags(Collection<String> tags)
 			throws DataNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return null;//	TODO
 	}
 
 	public Collection<Challenge> getChallengesByLocation(String locationId)
 			throws DataNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return rsp.getChallengeDbService().findByLocationId(locationId);
 	}
 
 	public Collection<Challenge> getTrendingChallenges()
@@ -64,10 +62,9 @@ public class ChallengeServiceImpl implements ChallengeService{
 		return null;
 	}
 
-	public Collection<Challenge> getChallengesCreatedAfter(long timestamp)
+	public Collection<Challenge> getChallengesCreatedAfter(Timestamp timestamp)
 			throws DataNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		return rsp.getChallengeDbService().findByCreatedtsAfter(timestamp);
 	}
 
 	public Collection<Challenge> getChallengeWishlistForUser(String userId)
@@ -89,19 +86,16 @@ public class ChallengeServiceImpl implements ChallengeService{
 	}
 
 	public void addChallenge(Challenge challenge) throws InvalidInputException {
-		// TODO Auto-generated method stub
-
+		rsp.getChallengeDbService().create(challenge);
 	}
 
 	public void updateChallenge(Challenge challenge)
 			throws InvalidInputException {
-		// TODO Auto-generated method stub
-
+		rsp.getChallengeDbService().update(challenge);
 	}
 
 	public void removeChallenge(String id) throws InvalidInputException {
-		// TODO Auto-generated method stub
-
+		rsp.getChallengeDbService().delete(id);
 	}
 
 }

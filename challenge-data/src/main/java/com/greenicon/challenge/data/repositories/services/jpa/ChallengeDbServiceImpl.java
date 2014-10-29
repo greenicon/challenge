@@ -1,5 +1,6 @@
 package com.greenicon.challenge.data.repositories.services.jpa;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -38,5 +39,17 @@ public class ChallengeDbServiceImpl implements ChallengeDbService{
 
 	public List<Challenge> findByByCategory(String category) {
 		return repository.findByCategory(category);
+	}
+	
+	public List<Challenge> findByByTag(String tag) {
+		return null;//	TODO
+	}
+
+	public List<Challenge> findByLocationId(String locationId) {
+		return repository.findByLocationId(locationId);
+	}
+
+	public List<Challenge> findByCreatedtsAfter(Timestamp timestamp) {
+		return repository.findByCreatedtsAfter(timestamp);
 	}
 }

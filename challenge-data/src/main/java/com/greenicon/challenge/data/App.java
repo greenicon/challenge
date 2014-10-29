@@ -28,6 +28,8 @@ public class App
 		System.out.println(users);
 		 */
 
-		System.out.println(rsp.getCategoryDbService().findAll());
+		//System.out.println(rsp.getCategoryDbService().findAll());
+		
+		System.out.println(rsp.getChallengeUserGangMapDbService().findByChallengeIdAndState("1", "1"));
 	}
 }

@@ -14,7 +14,7 @@ public interface ChallengeDbService {
 	List<Challenge> findAll();
 
 	List<Challenge> findByByCategory(String category);
-	//List<Challenge> findByByTag(String category);
+	//List<Challenge> findByByTag(String tag);
 	List<Challenge> findByLocationId(String locationId);
 	List<Challenge> findByCreatedtsAfter(Timestamp time);
 }

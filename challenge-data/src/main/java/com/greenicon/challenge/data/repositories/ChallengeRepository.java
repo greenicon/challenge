@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.greenicon.challenge.data.models.Challenge;
 
@@ -14,5 +15,6 @@ public interface ChallengeRepository extends JpaRepository<Challenge, String>{
 	List<Challenge> findByLocationId(String locationId);
 	List<Challenge> findByCreatedtsAfter(Timestamp time);
 	
-	List<String> findByChallengeIdAndState(String challengeeId, String state);
+	//@Query("SELECT c FROM Challenge c WHERE c.id =:challengeeId AND u.lastName =:state ")
+	//List<String> findByChallengeIdAndState(String challengeeId, String state);
 }

@@ -1,9 +1,12 @@
 package com.greenicon.challenge.data.models;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import java.sql.Timestamp;
-import java.util.List;
 
 
 /**
@@ -11,84 +14,52 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="challenge")
 @NamedQuery(name="Challenge.findAll", query="SELECT c FROM Challenge c")
 public class Challenge implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	private String category;
+
+	@Column(name="COVER_IMAGEID")
+	private String coverImageid;
+
+	private Timestamp createdts;
+
+	private String description;
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	@Column(unique=true, nullable=false, length=64)
 	private String id;
 
-	@Column(name="COVER_IMAGEID", nullable=false, length=64)
-	private String coverImageid;
-
-	@Column(nullable=false)
-	private Timestamp createdts;
-
-	@Column(nullable=false, length=256)
-	private String description;
-	
-	@Column(nullable=false, length=256)
-	private String category;
-
-	@Column(name="LOCATION_ID", nullable=false, length=64)
+	@Column(name="LOCATION_ID")
 	private String locationId;
 
-	@Column(nullable=false, length=128)
 	private String name;
 
-	@Column(name="PROFILE_IMAGEID", nullable=false, length=64)
+	@Column(name="PROFILE_IMAGEID")
 	private String profileImageid;
 
-	@Column(nullable=false, length=64)
+	private String tags;
+
 	private String type;
 
-	@Column(nullable=false)
 	private Timestamp updatedts;
 
-	@Column(name="USER_ID", nullable=false, length=64)
+	@Column(name="USER_ID")
 	private String userId;
-
-	//bi-directional many-to-one association to ChallengeData
-	@OneToMany(mappedBy="challenge", fetch=FetchType.EAGER)
-	private List<ChallengeData> challengeData;
-
-	//bi-directional many-to-one association to ChallengeGroupMap
-	@OneToMany(mappedBy="challenge1", fetch=FetchType.EAGER)
-	private List<ChallengeGroupMap> challengeGroupMaps1;
-
-	//bi-directional many-to-one association to ChallengeGroupMap
-	@OneToMany(mappedBy="challenge2", fetch=FetchType.EAGER)
-	private List<ChallengeGroupMap> challengeGroupMaps2;
-
-	//bi-directional many-to-one association to ChallengeUserGangMap
-	@OneToMany(mappedBy="challenge", fetch=FetchType.EAGER)
-	private List<ChallengeUserGangMap> challengeUserGangMaps;
 
 	public Challenge() {
 	}
 
-	@Override
-	public String toString() {
-		return "Challenge [id=" + id + ", coverImageid=" + coverImageid
-				+ ", createdts=" + createdts + ", description=" + description
-				+ ", category=" + category + ", locationId=" + locationId
-				+ ", name=" + name + ", profileImageid=" + profileImageid
-				+ ", type=" + type + ", updatedts=" + updatedts + ", userId="
-				+ userId + ", challengeData=" + challengeData
-				+ ", challengeGroupMaps1=" + challengeGroupMaps1
-				+ ", challengeGroupMaps2=" + challengeGroupMaps2
-				+ ", challengeUserGangMaps=" + challengeUserGangMaps + "]";
+	public String getCategory() {
+		return this.category;
 	}
 
-	public String getId() {
-		return this.id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getCoverImageid() {
@@ -115,12 +86,12 @@ public class Challenge implements Serializable {
 		this.description = description;
 	}
 
-	public String getCategory() {
-		return category;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getLocationId() {
@@ -147,6 +118,14 @@ public class Challenge implements Serializable {
 		this.profileImageid = profileImageid;
 	}
 
+	public String getTags() {
+		return this.tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
+
 	public String getType() {
 		return this.type;
 	}
@@ -169,94 +148,6 @@ public class Challenge implements Serializable {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-
-	public List<ChallengeData> getChallengeData() {
-		return this.challengeData;
-	}
-
-	public void setChallengeData(List<ChallengeData> challengeData) {
-		this.challengeData = challengeData;
-	}
-
-	public ChallengeData addChallengeData(ChallengeData challengeData) {
-		getChallengeData().add(challengeData);
-		challengeData.setChallenge(this);
-
-		return challengeData;
-	}
-
-	public ChallengeData removeChallengeData(ChallengeData challengeData) {
-		getChallengeData().remove(challengeData);
-		challengeData.setChallenge(null);
-
-		return challengeData;
-	}
-
-	public List<ChallengeGroupMap> getChallengeGroupMaps1() {
-		return this.challengeGroupMaps1;
-	}
-
-	public void setChallengeGroupMaps1(List<ChallengeGroupMap> challengeGroupMaps1) {
-		this.challengeGroupMaps1 = challengeGroupMaps1;
-	}
-
-	public ChallengeGroupMap addChallengeGroupMaps1(ChallengeGroupMap challengeGroupMaps1) {
-		getChallengeGroupMaps1().add(challengeGroupMaps1);
-		challengeGroupMaps1.setChallenge1(this);
-
-		return challengeGroupMaps1;
-	}
-
-	public ChallengeGroupMap removeChallengeGroupMaps1(ChallengeGroupMap challengeGroupMaps1) {
-		getChallengeGroupMaps1().remove(challengeGroupMaps1);
-		challengeGroupMaps1.setChallenge1(null);
-
-		return challengeGroupMaps1;
-	}
-
-	public List<ChallengeGroupMap> getChallengeGroupMaps2() {
-		return this.challengeGroupMaps2;
-	}
-
-	public void setChallengeGroupMaps2(List<ChallengeGroupMap> challengeGroupMaps2) {
-		this.challengeGroupMaps2 = challengeGroupMaps2;
-	}
-
-	public ChallengeGroupMap addChallengeGroupMaps2(ChallengeGroupMap challengeGroupMaps2) {
-		getChallengeGroupMaps2().add(challengeGroupMaps2);
-		challengeGroupMaps2.setChallenge2(this);
-
-		return challengeGroupMaps2;
-	}
-
-	public ChallengeGroupMap removeChallengeGroupMaps2(ChallengeGroupMap challengeGroupMaps2) {
-		getChallengeGroupMaps2().remove(challengeGroupMaps2);
-		challengeGroupMaps2.setChallenge2(null);
-
-		return challengeGroupMaps2;
-	}
-
-	public List<ChallengeUserGangMap> getChallengeUserGangMaps() {
-		return this.challengeUserGangMaps;
-	}
-
-	public void setChallengeUserGangMaps(List<ChallengeUserGangMap> challengeUserGangMaps) {
-		this.challengeUserGangMaps = challengeUserGangMaps;
-	}
-
-	public ChallengeUserGangMap addChallengeUserGangMap(ChallengeUserGangMap challengeUserGangMap) {
-		getChallengeUserGangMaps().add(challengeUserGangMap);
-		challengeUserGangMap.setChallenge(this);
-
-		return challengeUserGangMap;
-	}
-
-	public ChallengeUserGangMap removeChallengeUserGangMap(ChallengeUserGangMap challengeUserGangMap) {
-		getChallengeUserGangMaps().remove(challengeUserGangMap);
-		challengeUserGangMap.setChallenge(null);
-
-		return challengeUserGangMap;
 	}
 
 }

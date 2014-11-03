@@ -1,5 +1,6 @@
 package com.greenicon.challenge.data.repositories.services.jpa;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -36,8 +37,8 @@ public class ChallengeUserGangMapDbServiceImpl implements ChallengeUserGangMapDb
 		return repository.findAll();
 	}
 
-	public List<String> findByChallengeIdAndState(String challengeeId,
+	public Collection<String> findByChallengeeIdAndState(String challengeeId,
 			String state) {
-		return repository.findByChallengeIdAndState(challengeeId, state);
+		return repository.findByChallengeeIdAndState(challengeeId, state);
 	}
 }

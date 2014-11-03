@@ -1,5 +1,6 @@
 package com.greenicon.challenge.data.repositories.services;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.greenicon.challenge.data.models.ChallengeUserGangMap;
@@ -12,5 +13,5 @@ public interface ChallengeUserGangMapDbService {
 	ChallengeUserGangMap find(String id);
 	List<ChallengeUserGangMap> findAll();
 	
-	List<String> findByChallengeIdAndState(String challengeeId, String state);
+	Collection<String> findByChallengeeIdAndState(String challengeeId, String state);
 }

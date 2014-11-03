@@ -54,6 +54,16 @@ public class Challenge implements Serializable {
 	public Challenge() {
 	}
 
+	@Override
+	public String toString() {
+		return "Challenge [category=" + category + ", coverImageid="
+				+ coverImageid + ", createdts=" + createdts + ", description="
+				+ description + ", id=" + id + ", locationId=" + locationId
+				+ ", name=" + name + ", profileImageid=" + profileImageid
+				+ ", tags=" + tags + ", type=" + type + ", updatedts="
+				+ updatedts + ", userId=" + userId + "]";
+	}
+
 	public String getCategory() {
 		return this.category;
 	}

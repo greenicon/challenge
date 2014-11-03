@@ -15,7 +15,7 @@ import com.greenicon.challenge.data.repositories.services.provider.RepositorySer
 import com.greenicon.challenge.services.common.exceptions.DataNotFoundException;
 import com.greenicon.challenge.services.common.exceptions.DependencyException;
 import com.greenicon.challenge.services.common.exceptions.InvalidInputException;
-import com.greenicon.challenge.services.common.utils.CommonUtils;
+import com.greenicon.challenge.services.common.utils.Utils;
 import com.greenicon.challenge.services.user.UserService;
 import com.greenicon.challenge.services.user.util.UserUtils;
 
@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
 	public Collection<User> getUsers(String userName)
 			throws DataNotFoundException, DependencyException {
 		List<User> users = null;
-		if(null != rsp && !CommonUtils.isEmptyString(userName)){
+		if(null != rsp && !Utils.isEmpty(userName)){
 			try{
 				users = rsp.getUserDbService().findByName(userName);
 			}catch(Throwable e){

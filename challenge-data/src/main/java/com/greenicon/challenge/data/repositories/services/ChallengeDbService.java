@@ -1,6 +1,7 @@
 package com.greenicon.challenge.data.repositories.services;
 
 import java.sql.Timestamp;
+import java.util.Collection;
 import java.util.List;
 
 import com.greenicon.challenge.data.models.Challenge;
@@ -13,8 +14,9 @@ public interface ChallengeDbService {
 	Challenge find(String id);
 	List<Challenge> findAll();
 
-	List<Challenge> findByByCategory(String category);
-	//List<Challenge> findByByTag(String tag);
+	List<Challenge> findByCategory(String category);
+	List<Challenge> findByTags(String tag);
 	List<Challenge> findByLocationId(String locationId);
 	List<Challenge> findByCreatedtsAfter(Timestamp time);
+	List<Challenge> findByIds(Collection<String> challengeIds);
 }
